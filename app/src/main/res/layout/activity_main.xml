@@ -14,10 +14,11 @@
         android:background="@color/purple_500"
         android:text="@string/button_label_toast"
         android:textColor="@color/white"
+        android:onClick="launchSecondActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:onClick="showToast" />
+         />
 
     <Button
         android:id="@+id/button_count"

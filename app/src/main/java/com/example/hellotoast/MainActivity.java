@@ -1,8 +1,12 @@
 package com.example.hellotoast;
 
+import static androidx.core.content.PackageManagerCompat.LOG_TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,6 +15,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private int mCount = 0;
     private TextView mShowCount;
+    public static final String EXTRA_MESSAGE =
+            "com.example.hellotoast.extra.MESSAGE";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 countUp();
             }
         });
+
     }
 
     public void showToast(View view) {
@@ -36,5 +44,14 @@ public class MainActivity extends AppCompatActivity {
         ++mCount;
         if (mShowCount != null)
             mShowCount.setText(Integer.toString(mCount));
+    }
+
+    public void launchSecondActivity(View view) {
+
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, HelloToast.class);
+        String message = mShowCount.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }

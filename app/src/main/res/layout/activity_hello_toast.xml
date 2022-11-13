@@ -6,4 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".HelloToast">
 
+    <TextView
+        android:id="@+id/text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="228dp"
+        android:text="@string/text_header"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="220dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="40dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_header" />
 </androidx.constraintlayout.widget.ConstraintLayout>
